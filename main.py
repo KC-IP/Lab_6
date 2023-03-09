@@ -1,3 +1,4 @@
+# Aidan Boudreau & Wen Qian Chen
 # Define the main function
 def main():
     while True:
