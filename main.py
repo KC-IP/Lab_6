@@ -1,6 +1,7 @@
 # Aidan Boudreau & Wen Qian Chen
 # Define the main function
 def main():
+    #fart
     while True:
         print("Menu")
         print("-------------")
