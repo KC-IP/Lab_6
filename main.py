@@ -1,13 +1,22 @@
 # Aidan Boudreau & Wen Qian Chen
 # Define the main function
-def encode(password):
-    return password + "555"
+def password_encoder(password):
+    encoded_password = ''
+    for digit in password:
+        # Add 3 to each digit
+        encoded_digit = str((int(digit) + 3) % 10)
+        encoded_password += encoded_digit
+        return encoded_password
 
-def decode(encode_password):
-    original_password = encode_password[:-3]
-    return original_password
+def password_decoder(encode_password):
+    password = ''
+    for digit in encode_password:
+        decoded_digit = str((int(digit) - 3) % 10)
+        password += decoded_digit
+    return password
+
 def main():
-    #fart
+    # menu options
     while True:
         print("Menu")
         print("-------------")
@@ -19,18 +28,21 @@ def main():
 
         if option == "1":
             password = input("Please enter your password to encode: ")
-            encode_password = encode(password)
+            encoded_password = password_encoder(password)
             print("Your password has been encoded and stored!")
 
         elif option == "2":
-            encide_password = input("Please enter the encoded password: ")
-            original_password = decode(encode_password)
-            print("The encoded password is " + encoded_password + ", and the original_password is " + original_password + ".")
+            encoded_password = input("Please enter the encoded password: ")
+            original_password = password_decoder(encoded_password)
+            print("The encoded password is " + encoded_password + ", and the original password is " + original_password + ".")
 
         elif option == "3":
             print("Goodbye!")
             break
+
         else:
             print("Invalid option. Please try again.")
+
+
 if __name__ == '__main__':
     main()
