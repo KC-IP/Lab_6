@@ -7,6 +7,7 @@ def decode(encode_password):
     original_password = encode_password[:-3]
     return original_password
 def main():
+    #fart
     while True:
         print("Menu")
         print("-------------")
